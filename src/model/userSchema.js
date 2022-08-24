@@ -40,7 +40,7 @@ userSchema.virtual('password').set(function(password){
 //Lets attach some functions
 
 
-userSchema.methods = {
+ userSchema.methods = {
     /**
      * p:v
      * fn:function(){}
@@ -48,7 +48,8 @@ userSchema.methods = {
     checkMyPassword:function(p){ //formal argument
         return bcrypt.compareSync(p, this.hash_pass);;
     }
-};
+}; 
+
 
 
 module.exports=mongoose.model('profiledetails',userSchema)
